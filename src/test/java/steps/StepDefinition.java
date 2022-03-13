@@ -13,6 +13,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import static org.junit.Assert.assertFalse;
+
 public class StepDefinition extends ApplicationService {
 
     private List<AlbumsDTO> albumsDetails;
@@ -24,6 +26,9 @@ public class StepDefinition extends ApplicationService {
 
     private List<String> emailList;
     private List<Integer> postIdList;
+    private List<Integer> userIds;
+    private List<Integer> photoIds;
+    private List<Integer> albumsIds;
 
     private int userId = 0;
 
@@ -78,19 +83,34 @@ public class StepDefinition extends ApplicationService {
 
     }
 
+    @And("get all the user ids")
+    public List<Integer> getAllTheUsers() throws Exception {
+        userIds = usersDetails.stream().map(UsersDTO::getId).collect(Collectors.toList());
+        assertFalse(userIds.isEmpty());
+        return userIds;
+
+    }
+
     @And("retrieve all the related posts made by a specific user by using their user id")
     public List<Integer> retrieveAllTheRelatedPostMadeByUserByUsingTheirUserId() throws Exception {
         postIdList = postsDetails.stream().filter(postsList -> postsList.getUserId() == userId)
                 .map(postsDTOList -> postsDTOList.getId()).collect(Collectors.toList());
-        Assert.assertNotNull(postIdList);
+        assertFalse(postIdList.isEmpty());
         return postIdList;
+    }
+
+    @And("retrieve all the emails in the user section")
+    public List<String> retrieveAllTheEmailsInTheUserSection() throws Exception {
+        emailList = usersDetails.stream().map(UsersDTO::getEmail).collect(Collectors.toList());
+        assertFalse(emailList.isEmpty());
+        return emailList;
     }
 
     @And("get the related comments that belong to the specific post id")
     public List<CommentsDTO> getTheRelatedCommentsRegardingToTheSpecificPostId() throws Exception {
         List<CommentsDTO> commentsDTOList = commentsDetails.stream().filter(commentsDTO -> postIdList
                 .contains(commentsDTO.getPostId())).collect(Collectors.toList());
-        Assert.assertNotNull(commentsDTOList);
+        assertFalse(commentsDTOList.isEmpty());
         return commentsDTOList;
 
     }
@@ -101,13 +121,13 @@ public class StepDefinition extends ApplicationService {
         Assert.assertNotNull(commentsList);
         emailList = commentsList.stream().map(commentsDTO -> commentsDTO.getEmail())
                 .collect(Collectors.toList());
-        Assert.assertNotNull(emailList);
+        assertFalse(emailList.isEmpty());
         return emailList;
 
     }
 
-    @Then("verify email ids format inside the comments related to the specific post id")
-    public void verifyEmailIdsFormatInsideTheCommentsRelatedToTheSpecificPostId() throws Exception {
+    @Then("verify email ids format")
+    public void verifyEmailIdsFormat() throws Exception {
 
         for (String emailId : emailList) {
             String regexPattern = "^(.+)@(\\S+)$";
@@ -118,5 +138,59 @@ public class StepDefinition extends ApplicationService {
             Assert.assertTrue(matcher.matches());
         }
 
+
     }
+
+    @Then("verify every user has albums with respect to their user id")
+    public void verifyUserHasAlbumsThroughTheirUserId() throws Exception {
+
+        for (Integer userId : userIds) {
+            albumsIds = albumsDetails.stream().filter(albumsList -> albumsList.getUserId() == userId)
+                    .map(AlbumsDTO::getId).collect(Collectors.toList());
+            assertFalse(albumsIds.isEmpty());
+        }
+
+    }
+
+    @Then("verify that every user's album has photos")
+    public void verifyThatEveryUserAlbumHasPhotos() throws Exception {
+
+        for (Integer userId : userIds) {
+            albumsIds = albumsDetails.stream().filter(albumsList -> albumsList.getUserId() == userId)
+                    .map(AlbumsDTO::getId).collect(Collectors.toList());
+            assertFalse(albumsIds.isEmpty());
+            for (Integer albumsId : albumsIds) {
+                photoIds = photosDetails.stream().filter(photosList -> photosList.getAlbumId() == albumsId)
+                        .map(PhotosDTO::getAlbumId).collect(Collectors.toList());
+                assertFalse(photoIds.isEmpty());
+            }
+        }
+
+    }
+
+    @Then("verify the photo's url and thumbnailUrl base path ids are same")
+    public void verifyPhotoUrlAndThumbnailUrlBasePathIdsAreSame() throws Exception {
+
+        for (Integer albumsId : albumsIds) {
+            photoIds = photosDetails.stream().filter(photosList -> photosList.getAlbumId() == albumsId)
+                    .map(PhotosDTO::getAlbumId).collect(Collectors.toList());
+            assertFalse(photoIds.isEmpty());
+
+            for (Integer photoId : photoIds) {
+                Optional<PhotosDTO> first = photosDetails.stream().filter(photosList -> photosList
+                        .getId() == photoId).findFirst();
+                assertFalse(Optional.empty().isPresent());
+                String thumbnailUrl = first.get().getThumbnailUrl();
+                thumbnailUrl = thumbnailUrl.substring(thumbnailUrl.length() - 6);
+                String url = first.get().getUrl();
+                url = url.substring(url.length() - 6);
+
+                Assert.assertEquals(thumbnailUrl, url);
+
+            }
+        }
+
+    }
+
+
 }
