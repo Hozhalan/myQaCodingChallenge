@@ -1,31 +1,27 @@
 package api.base;
 
+import api.exception.RestAssuredFailException;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import lombok.extern.slf4j.Slf4j;
 
 import static io.restassured.RestAssured.given;
 
+@Slf4j
 public class APIServicesBase {
 
-    private Response response;
+  public APIServicesBase() {}
 
+  public Response getRequest(String relativeURI) {
+    RestAssured.baseURI = Constants.baseURI;
+    RestAssured.basePath = relativeURI;
+    try {
 
-    public APIServicesBase() {
+      return given().log().all().when().get();
+
+    } catch (Exception ex) {
+      log.error("Failed due to ", ex);
+      throw new RestAssuredFailException();
     }
-
-    public Response getRequest(String relativeURI) {
-        RestAssured.baseURI = "https://jsonplaceholder.typicode.com/";
-        RestAssured.basePath = relativeURI;
-        try {
-
-            response = given().log().all().when().get();
-
-            return response;
-
-        } catch (Exception ex) {
-            throw ex;
-        }
-
-
-    }
+  }
 }

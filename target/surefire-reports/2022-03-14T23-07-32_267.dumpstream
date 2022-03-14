@@ -1,4 +1,4 @@
-# Created at 2022-03-14T19:31:44.563
+# Created at 2022-03-14T23:07:32.614
 Boot Manifest-JAR contains absolute paths in classpath 'D:\myQaCodingChallenge\target\test-classes'
 Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
 
