@@ -76,9 +76,8 @@ public class StepDefinition extends ApplicationService {
     public int getUserIdValueOfTheGivenUsername(String userNameValue) throws Exception {
         Optional<UsersDTO> userName = usersDetails.stream().filter(userList -> userList.getUsername()
                 .equals(userNameValue)).findFirst();
-        if (userName.isPresent()) {
-            userId = userName.get().getId();
-        }
+        assertFalse(Optional.empty().isPresent());
+        userId = userName.get().getId();
         return userId;
 
     }

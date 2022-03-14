@@ -1,73 +1,462 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="base.Runner" time="9.445" errors="0" skipped="0">
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="base.Runner" time="10.107" tests="5" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_301\jre\bin"/>
-    <property name="java.vm.version" value="25.301-b09"/>
-    <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="D:\myQaCodingChallenge"/>
-    <property name="java.vendor.url" value="http://java.oracle.com/"/>
-    <property name="path.separator" value=";"/>
-    <property name="guice.disable.misplaced.annotation.check" value="true"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="user.script" value=""/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\myQaCodingChallenge\target\test-classes;D:\myQaCodingChallenge\target\classes;C:\MVN_Repo\io\rest-assured\rest-assured\4.4.0\rest-assured-4.4.0.jar;C:\MVN_Repo\org\codehaus\groovy\groovy\3.0.8\groovy-3.0.8.jar;C:\MVN_Repo\org\codehaus\groovy\groovy-xml\3.0.8\groovy-xml-3.0.8.jar;C:\MVN_Repo\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\MVN_Repo\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\MVN_Repo\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\MVN_Repo\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\MVN_Repo\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\MVN_Repo\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\MVN_Repo\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\MVN_Repo\io\rest-assured\json-path\4.4.0\json-path-4.4.0.jar;C:\MVN_Repo\org\codehaus\groovy\groovy-json\3.0.8\groovy-json-3.0.8.jar;C:\MVN_Repo\io\rest-assured\rest-assured-common\4.4.0\rest-assured-common-4.4.0.jar;C:\MVN_Repo\io\rest-assured\xml-path\4.4.0\xml-path-4.4.0.jar;C:\MVN_Repo\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\MVN_Repo\jakarta\xml\bind\jakarta.xml.bind-api\2.3.3\jakarta.xml.bind-api-2.3.3.jar;C:\MVN_Repo\jakarta\activation\jakarta.activation-api\1.2.2\jakarta.activation-api-1.2.2.jar;C:\MVN_Repo\com\sun\xml\bind\jaxb-impl\2.3.3\jaxb-impl-2.3.3.jar;C:\MVN_Repo\com\fasterxml\jackson\core\jackson-databind\2.13.1\jackson-databind-2.13.1.jar;C:\MVN_Repo\com\fasterxml\jackson\core\jackson-annotations\2.13.1\jackson-annotations-2.13.1.jar;C:\MVN_Repo\com\fasterxml\jackson\core\jackson-core\2.13.1\jackson-core-2.13.1.jar;C:\MVN_Repo\org\projectlombok\lombok\1.18.20\lombok-1.18.20.jar;C:\MVN_Repo\io\cucumber\cucumber-java\7.2.3\cucumber-java-7.2.3.jar;C:\MVN_Repo\io\cucumber\cucumber-core\7.2.3\cucumber-core-7.2.3.jar;C:\MVN_Repo\io\cucumber\cucumber-gherkin\7.2.3\cucumber-gherkin-7.2.3.jar;C:\MVN_Repo\io\cucumber\cucumber-gherkin-messages\7.2.3\cucumber-gherkin-messages-7.2.3.jar;C:\MVN_Repo\io\cucumber\messages\17.1.1\messages-17.1.1.jar;C:\MVN_Repo\io\cucumber\tag-expressions\4.1.0\tag-expressions-4.1.0.jar;C:\MVN_Repo\io\cucumber\cucumber-expressions\15.0.1\cucumber-expressions-15.0.1.jar;C:\MVN_Repo\io\cucumber\datatable\7.2.3\datatable-7.2.3.jar;C:\MVN_Repo\io\cucumber\cucumber-plugin\7.2.3\cucumber-plugin-7.2.3.jar;C:\MVN_Repo\io\cucumber\docstring\7.2.3\docstring-7.2.3.jar;C:\MVN_Repo\io\cucumber\html-formatter\17.0.0\html-formatter-17.0.0.jar;C:\MVN_Repo\io\cucumber\ci-environment\8.1.0\ci-environment-8.1.0.jar;C:\MVN_Repo\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\MVN_Repo\io\cucumber\cucumber-junit-platform-engine\7.2.3\cucumber-junit-platform-engine-7.2.3.jar;C:\MVN_Repo\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\MVN_Repo\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\MVN_Repo\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\MVN_Repo\org\junit\platform\junit-platform-suite\1.8.2\junit-platform-suite-1.8.2.jar;C:\MVN_Repo\org\junit\platform\junit-platform-suite-api\1.8.2\junit-platform-suite-api-1.8.2.jar;C:\MVN_Repo\org\junit\platform\junit-platform-suite-engine\1.8.2\junit-platform-suite-engine-1.8.2.jar;C:\MVN_Repo\org\junit\jupiter\junit-jupiter\5.8.2\junit-jupiter-5.8.2.jar;C:\MVN_Repo\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\MVN_Repo\org\junit\jupiter\junit-jupiter-params\5.8.2\junit-jupiter-params-5.8.2.jar;C:\MVN_Repo\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\MVN_Repo\junit\junit\4.13.2\junit-4.13.2.jar;C:\MVN_Repo\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\MVN_Repo\io\cucumber\cucumber-junit\7.0.0\cucumber-junit-7.0.0.jar;C:\MVN_Repo\org\junit\platform\junit-platform-runner\1.8.2\junit-platform-runner-1.8.2.jar;C:\MVN_Repo\org\junit\platform\junit-platform-launcher\1.8.2\junit-platform-launcher-1.8.2.jar;C:\MVN_Repo\org\junit\platform\junit-platform-suite-commons\1.8.2\junit-platform-suite-commons-1.8.2.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Colombo"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Windows 10"/>
     <property name="user.country" value="GB"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.os.patch.level" value=""/>
-    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\myQaCodingChallenge"/>
-    <property name="java.runtime.version" value="1.8.0_301-b09"/>
-    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_301\jre\lib\endorsed"/>
-    <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="C:\Users\Hozhalan\AppData\Local\Temp\"/>
-    <property name="line.separator" value="
-"/>
-    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="user.variant" value=""/>
-    <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\apache-maven-3.8.3\bin\m2.conf"/>
-    <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_301\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Python39\Scripts\;C:\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Users\Hozhalan\AppData\Local\Android\Sdk\build-tools;C:\Users\Hozhalan\AppData\Local\Android\Sdk\platforms;C:\Users\Hozhalan\AppData\Local\Android\Sdk\platform-tools;C:\Users\Hozhalan\AppData\Local\Android\Sdk\tools;C:\Program Files\nodejs\;C:\Users\Hozhalan\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk1.8.0_301\bin;C:\gradle-7.2\bin;C:\groovy-3.0.9\bin;C:\spring-2.5.5\bin;C:\apache-maven-3.8.3\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.2\bin;;C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.2\bin;;C:\Users\Hozhalan\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Hozhalan\AppData\Roaming\npm;."/>
-    <property name="maven.conf" value="C:\apache-maven-3.8.3/conf"/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="java.class.version" value="52.0"/>
-    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="10.0"/>
-    <property name="library.jansi.path" value="C:\apache-maven-3.8.3\lib\jansi-native"/>
-    <property name="user.home" value="C:\Users\Hozhalan"/>
-    <property name="user.timezone" value="Asia/Colombo"/>
-    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
-    <property name="java.specification.version" value="1.8"/>
-    <property name="file.encoding" value="Cp1252"/>
-    <property name="user.name" value="Hozhalan"/>
-    <property name="java.class.path" value="C:\apache-maven-3.8.3\boot\plexus-classworlds-2.6.0.jar"/>
-    <property name="java.vm.specification.version" value="1.8"/>
-    <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_301\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
-    <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="user.language" value="en"/>
-    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
-    <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.8.0_301"/>
-    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
-    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_301\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_301\jre\classes"/>
-    <property name="sun.stderr.encoding" value="cp850"/>
-    <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="C:\apache-maven-3.8.3"/>
-    <property name="file.separator" value="\"/>
-    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_301\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\Hozhalan\AppData\Local\Temp\surefire950795644966142998\surefirebooter5757663592743948832.jar C:\Users\Hozhalan\AppData\Local\Temp\surefire950795644966142998 2022-03-14T19-32-15_558-jvmRun1 surefire2004517806089743287tmp surefire_04020582881619981973tmp"/>
+    <property name="surefire.test.class.path" value="D:\myQaCodingChallenge\target\test-classes;D:\myQaCodingChallenge\target\classes;C:\MVN_Repo\io\rest-assured\rest-assured\4.4.0\rest-assured-4.4.0.jar;C:\MVN_Repo\org\codehaus\groovy\groovy\3.0.8\groovy-3.0.8.jar;C:\MVN_Repo\org\codehaus\groovy\groovy-xml\3.0.8\groovy-xml-3.0.8.jar;C:\MVN_Repo\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\MVN_Repo\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\MVN_Repo\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\MVN_Repo\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\MVN_Repo\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\MVN_Repo\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\MVN_Repo\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\MVN_Repo\io\rest-assured\json-path\4.4.0\json-path-4.4.0.jar;C:\MVN_Repo\org\codehaus\groovy\groovy-json\3.0.8\groovy-json-3.0.8.jar;C:\MVN_Repo\io\rest-assured\rest-assured-common\4.4.0\rest-assured-common-4.4.0.jar;C:\MVN_Repo\io\rest-assured\xml-path\4.4.0\xml-path-4.4.0.jar;C:\MVN_Repo\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\MVN_Repo\jakarta\xml\bind\jakarta.xml.bind-api\2.3.3\jakarta.xml.bind-api-2.3.3.jar;C:\MVN_Repo\jakarta\activation\jakarta.activation-api\1.2.2\jakarta.activation-api-1.2.2.jar;C:\MVN_Repo\com\sun\xml\bind\jaxb-impl\2.3.3\jaxb-impl-2.3.3.jar;C:\MVN_Repo\com\fasterxml\jackson\core\jackson-databind\2.13.1\jackson-databind-2.13.1.jar;C:\MVN_Repo\com\fasterxml\jackson\core\jackson-annotations\2.13.1\jackson-annotations-2.13.1.jar;C:\MVN_Repo\com\fasterxml\jackson\core\jackson-core\2.13.1\jackson-core-2.13.1.jar;C:\MVN_Repo\org\projectlombok\lombok\1.18.20\lombok-1.18.20.jar;C:\MVN_Repo\io\cucumber\cucumber-java\7.2.3\cucumber-java-7.2.3.jar;C:\MVN_Repo\io\cucumber\cucumber-core\7.2.3\cucumber-core-7.2.3.jar;C:\MVN_Repo\io\cucumber\cucumber-gherkin\7.2.3\cucumber-gherkin-7.2.3.jar;C:\MVN_Repo\io\cucumber\cucumber-gherkin-messages\7.2.3\cucumber-gherkin-messages-7.2.3.jar;C:\MVN_Repo\io\cucumber\messages\17.1.1\messages-17.1.1.jar;C:\MVN_Repo\io\cucumber\tag-expressions\4.1.0\tag-expressions-4.1.0.jar;C:\MVN_Repo\io\cucumber\cucumber-expressions\15.0.1\cucumber-expressions-15.0.1.jar;C:\MVN_Repo\io\cucumber\datatable\7.2.3\datatable-7.2.3.jar;C:\MVN_Repo\io\cucumber\cucumber-plugin\7.2.3\cucumber-plugin-7.2.3.jar;C:\MVN_Repo\io\cucumber\docstring\7.2.3\docstring-7.2.3.jar;C:\MVN_Repo\io\cucumber\html-formatter\17.0.0\html-formatter-17.0.0.jar;C:\MVN_Repo\io\cucumber\ci-environment\8.1.0\ci-environment-8.1.0.jar;C:\MVN_Repo\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\MVN_Repo\io\cucumber\cucumber-junit-platform-engine\7.2.3\cucumber-junit-platform-engine-7.2.3.jar;C:\MVN_Repo\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\MVN_Repo\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\MVN_Repo\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\MVN_Repo\org\junit\platform\junit-platform-suite\1.8.2\junit-platform-suite-1.8.2.jar;C:\MVN_Repo\org\junit\platform\junit-platform-suite-api\1.8.2\junit-platform-suite-api-1.8.2.jar;C:\MVN_Repo\org\junit\platform\junit-platform-suite-engine\1.8.2\junit-platform-suite-engine-1.8.2.jar;C:\MVN_Repo\org\junit\jupiter\junit-jupiter\5.8.2\junit-jupiter-5.8.2.jar;C:\MVN_Repo\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\MVN_Repo\org\junit\jupiter\junit-jupiter-params\5.8.2\junit-jupiter-params-5.8.2.jar;C:\MVN_Repo\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\MVN_Repo\junit\junit\4.13.2\junit-4.13.2.jar;C:\MVN_Repo\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\MVN_Repo\io\cucumber\cucumber-junit\7.0.0\cucumber-junit-7.0.0.jar;C:\MVN_Repo\org\junit\platform\junit-platform-runner\1.8.2\junit-platform-runner-1.8.2.jar;C:\MVN_Repo\org\junit\platform\junit-platform-launcher\1.8.2\junit-platform-launcher-1.8.2.jar;C:\MVN_Repo\org\junit\platform\junit-platform-suite-commons\1.8.2\junit-platform-suite-commons-1.8.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Hozhalan"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_301\jre"/>
+    <property name="basedir" value="D:\myQaCodingChallenge"/>
+    <property name="file.separator" value="\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\Hozhalan\AppData\Local\Temp\surefire950795644966142998\surefirebooter5757663592743948832.jar"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_301\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_301\jre\classes"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_301-b09"/>
+    <property name="user.name" value="Hozhalan"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_301\jre\lib\endorsed"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\MVN_Repo"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Hozhalan\AppData\Local\Temp\"/>
+    <property name="java.version" value="1.8.0_301"/>
+    <property name="user.dir" value="D:\myQaCodingChallenge"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_301\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Python39\Scripts\;C:\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Users\Hozhalan\AppData\Local\Android\Sdk\build-tools;C:\Users\Hozhalan\AppData\Local\Android\Sdk\platforms;C:\Users\Hozhalan\AppData\Local\Android\Sdk\platform-tools;C:\Users\Hozhalan\AppData\Local\Android\Sdk\tools;C:\Program Files\nodejs\;C:\Users\Hozhalan\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk1.8.0_301\bin;C:\gradle-7.2\bin;C:\groovy-3.0.9\bin;C:\spring-2.5.5\bin;C:\apache-maven-3.8.3\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.2\bin;;C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.2\bin;;C:\Users\Hozhalan\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Hozhalan\AppData\Roaming\npm;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.301-b09"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="sun.stdout.encoding" value="cp850"/>
-    <property name="sun.desktop" value="windows"/>
-    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase classname="Verifying the test flow" name="Verify that the user mentioned emails in the comment section are in the proper format" time="3.155"/>
-  <testcase classname="Verifying the test flow" name="Verify user has albums" time="1.601"/>
-  <testcase classname="Verifying the test flow" name="Verify every album has photos" time="1.706"/>
-  <testcase classname="Verifying the test flow" name="Verify url and thumbnailUrl base path id of photo&apos;s are the same" time="1.524"/>
-  <testcase classname="Verifying the test flow" name="Verify that the user emails in the user section are in the proper format" time="1.459"/>
+  <testcase name="Verify that the user mentioned emails in the comment section are in the proper format" classname="Verifying the test flow" time="3.357">
+    <system-out><![CDATA[
+Scenario: Verify that the user mentioned emails in the comment section are in the proper format # src/test/java/features/Test.feature:11
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/posts
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get posts details                                                                       # steps.StepDefinition.getPostsDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/comments
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get comments details                                                                    # steps.StepDefinition.getCommentsDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/albums
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get albums details                                                                      # steps.StepDefinition.getAlbumsDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/photos
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get photos details                                                                      # steps.StepDefinition.getPhotosDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/todos
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get todos details                                                                       # steps.StepDefinition.getTodosDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/users
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get users details                                                                       # steps.StepDefinition.getUsersDetails()
+  Given get the user id of the user whose name is "Delphine"                                    # steps.StepDefinition.getUserIdValueOfTheGivenUsername(java.lang.String)
+  And retrieve all the related posts made by a specific user by using their user id             # steps.StepDefinition.retrieveAllTheRelatedPostMadeByUserByUsingTheirUserId()
+  And get the related comments that belong to the specific post id                              # steps.StepDefinition.getTheRelatedCommentsRegardingToTheSpecificPostId()
+  And get the related email ids with in the comments related to the specific post id            # steps.StepDefinition.getTheRelatedEmailIdsWithInTheCommentsRelatedToTheSpecificPostId()
+  Then verify email ids format                                                                  # steps.StepDefinition.verifyEmailIdsFormat()
+]]></system-out>
+  </testcase>
+  <testcase name="Verify user has albums" classname="Verifying the test flow" time="1.522">
+    <system-out><![CDATA[
+Scenario: Verify user has albums                                  # src/test/java/features/Test.feature:19
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/posts
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get posts details                                         # steps.StepDefinition.getPostsDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/comments
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get comments details                                      # steps.StepDefinition.getCommentsDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/albums
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get albums details                                        # steps.StepDefinition.getAlbumsDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/photos
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get photos details                                        # steps.StepDefinition.getPhotosDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/todos
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get todos details                                         # steps.StepDefinition.getTodosDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/users
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get users details                                         # steps.StepDefinition.getUsersDetails()
+  Given get all the user ids                                      # steps.StepDefinition.getAllTheUsers()
+  Then verify every user has albums with respect to their user id # steps.StepDefinition.verifyUserHasAlbumsThroughTheirUserId()
+]]></system-out>
+  </testcase>
+  <testcase name="Verify every album has photos" classname="Verifying the test flow" time="1.567">
+    <system-out><![CDATA[
+Scenario: Verify every album has photos          # src/test/java/features/Test.feature:23
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/posts
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get posts details                        # steps.StepDefinition.getPostsDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/comments
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get comments details                     # steps.StepDefinition.getCommentsDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/albums
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get albums details                       # steps.StepDefinition.getAlbumsDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/photos
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get photos details                       # steps.StepDefinition.getPhotosDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/todos
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get todos details                        # steps.StepDefinition.getTodosDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/users
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get users details                        # steps.StepDefinition.getUsersDetails()
+  Given get all the user ids                     # steps.StepDefinition.getAllTheUsers()
+  Then verify that every user's album has photos # steps.StepDefinition.verifyThatEveryUserAlbumHasPhotos()
+]]></system-out>
+  </testcase>
+  <testcase name="Verify url and thumbnailUrl base path id of photo&apos;s are the same" classname="Verifying the test flow" time="1.447">
+    <system-out><![CDATA[
+Scenario: Verify url and thumbnailUrl base path id of photo's are the same # src/test/java/features/Test.feature:27
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/posts
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get posts details                                                  # steps.StepDefinition.getPostsDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/comments
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get comments details                                               # steps.StepDefinition.getCommentsDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/albums
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get albums details                                                 # steps.StepDefinition.getAlbumsDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/photos
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get photos details                                                 # steps.StepDefinition.getPhotosDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/todos
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get todos details                                                  # steps.StepDefinition.getTodosDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/users
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get users details                                                  # steps.StepDefinition.getUsersDetails()
+  Given get all the user ids                                               # steps.StepDefinition.getAllTheUsers()
+  And verify every user has albums with respect to their user id           # steps.StepDefinition.verifyUserHasAlbumsThroughTheirUserId()
+  Then verify the photo's url and thumbnailUrl base path ids are same      # steps.StepDefinition.verifyPhotoUrlAndThumbnailUrlBasePathIdsAreSame()
+]]></system-out>
+  </testcase>
+  <testcase name="Verify that the user emails in the user section are in the proper format" classname="Verifying the test flow" time="1.568">
+    <system-out><![CDATA[
+Scenario: Verify that the user emails in the user section are in the proper format # src/test/java/features/Test.feature:32
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/posts
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get posts details                                                          # steps.StepDefinition.getPostsDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/comments
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get comments details                                                       # steps.StepDefinition.getCommentsDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/albums
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get albums details                                                         # steps.StepDefinition.getAlbumsDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/photos
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get photos details                                                         # steps.StepDefinition.getPhotosDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/todos
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get todos details                                                          # steps.StepDefinition.getTodosDetails()
+Request method:	GET
+Request URI:	https://jsonplaceholder.typicode.com/users
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+  Given get users details                                                          # steps.StepDefinition.getUsersDetails()
+  Given retrieve all the emails in the user section                                # steps.StepDefinition.retrieveAllTheEmailsInTheUserSection()
+  Then verify email ids format                                                     # steps.StepDefinition.verifyEmailIdsFormat()
+]]></system-out>
+  </testcase>
 </testsuite>
